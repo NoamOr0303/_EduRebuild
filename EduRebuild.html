@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRebuild - שיקום בתי ספר ויישובים</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="לוגו בית הספר" id="school-logo">
+        <h1>EduRebuild - שיקום בתי ספר ויישובים</h1>
+    </header>
+    <main>
+        <section id="about">
+            <h2>אודות המוצר</h2>
+            <p>
+                המוצר שלנו נועד לסייע בשיקום בתי ספר ויישובים שנפגעו מאירועי השביעי לעשירי. באמצעות הכלי הזה, ניתן להעריך את רמת הנזק, לחשב את העלות המשוערת לשיקום ולהציג את המיקום המדויק של המבנה על מפה אינטראקטיבית. המוצר מספק מידע חשוב שמסייע בתהליך קבלת ההחלטות ובתכנון השיקום.
+            </p>
+            <p>
+                כלי זה חשוב מכיוון שהוא מאפשר להעריך במהירות ובדייקנות את הנזקים שנגרמו, ובכך לתעדף את תהליכי השיקום והסיוע. המידע המתקבל באמצעות הכלי יכול לשמש את הרשויות המקומיות, את צוותי החירום ואת הקהילות עצמן בתהליך השיקום וההתאוששות.
+            </p>
+        </section>
+        <section id="assessment">
+            <h2>הערכת מצב מבנים</h2>
+            <form id="assessment-form">
+                <label for="building-type">סוג המבנה:</label>
+                <select id="building-type" name="building-type">
+                    <option value="school">בית ספר</option>
+                    <option value="community-center">מרכז קהילתי</option>
+                    <option value="park">פארק</option>
+                    <option value="home">בית פרטי</option>
+                </select>
+                <label for="damage-level">רמת הנזק:</label>
+                <select id="damage-level" name="damage-level">
+                    <option value="low">נמוך</option>
+                    <option value="medium">בינוני</option>
+                    <option value="high">גבוה</option>
+                </select>
+                <label for="area-size">גודל האזור (מ"ר):</label>
+                <input type="number" id="area-size" name="area-size" required>
+                <button type="submit">הערך נזק</button>
+            </form>
+            <div id="assessment-result"></div>
+        </section>
+        <section id="map">
+            <h2>מיפוי מבנים פגועים</h2>
+            <div id="map-container"></div>
+        </section>
+        <input type="hidden" id="latitude">
+        <input type="hidden" id="longitude">
+    </main>
+    <footer>
+        <h3>קרדיטים</h3>
+        <ul>
+            <li>נועם אור -תכנות </li>
+            <li>אלה טלשיר </li>
+            <li>אייל מיל </li>
+            <li>מיכל סרוסי </li>
+        </ul>
+    </footer>
+</body>
+</html>
